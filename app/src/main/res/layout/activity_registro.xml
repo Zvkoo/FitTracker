@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F3F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar entrenamiento"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#16324F" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Tipo de entrenamiento"
+            android:textSize="18sp"
+            android:textColor="#16324F" />
+
+        <Spinner
+            android:id="@+id/spinnerEntrenamiento"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Intensidad"
+            android:textSize="18sp"
+            android:textColor="#16324F" />
+
+        <RadioGroup
+            android:id="@+id/rgIntensidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbBaja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Baja"
+                android:textColor="#16324F" />
+
+            <RadioButton
+                android:id="@+id/rbMedia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Media"
+                android:textColor="#16324F" />
+
+            <RadioButton
+                android:id="@+id/rbAlta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alta"
+                android:textColor="#16324F" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Hábitos completados"
+            android:textSize="18sp"
+            android:textColor="#16324F" />
+
+        <CheckBox
+            android:id="@+id/chkCalentamiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calentamiento realizado"
+            android:textColor="#16324F" />
+
+        <CheckBox
+            android:id="@+id/chkHidratacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hidratación adecuada"
+            android:textColor="#16324F" />
+
+        <CheckBox
+            android:id="@+id/chkEstiramiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estiramiento final"
+            android:textColor="#16324F" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Duración en minutos"
+            android:textSize="18sp"
+            android:textColor="#16324F" />
+
+        <EditText
+            android:id="@+id/edtMinutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:inputType="number"
+            android:hint="Ejemplo: 30"
+            android:textColor="#16324F"
+            android:textColorHint="#52616B" />
+
+        <TextView
+            android:id="@+id/txtProgreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Meta diaria: 0 / 60 minutos"
+            android:textSize="16sp"
+            android:textColor="#16324F" />
+
+        <ProgressBar
+            android:id="@+id/progressMeta"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="60"
+            android:progress="0"
+            android:progressTint="#167D8D" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Esfuerzo percibido"
+            android:textSize="18sp"
+            android:textColor="#16324F" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1 estrella: muy bajo · 5 estrellas: muy alto"
+            android:textColor="#52616B" />
+
+        <RatingBar
+            android:id="@+id/ratingEsfuerzo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:stepSize="1"
+            android:rating="1" />
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minHeight="56dp"
+            android:text="Registrar entrenamiento"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#167D8D" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Sesiones registradas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#16324F" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSesiones"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF" />
+
+    </LinearLayout>
+
+</ScrollView>
